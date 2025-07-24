@@ -37,7 +37,7 @@ pipeline {
       steps {
         sshagent(['ec2-key']) {
           sh '''
-          ssh -o StrictHostKeyChecking=no ubuntu@<EC2-IP> "
+          ssh -o StrictHostKeyChecking=no ec2-user@43.205.113.115 "
             kubectl set image deployment/product-service product-service=$IMAGE_NAME --record
           "
           '''
