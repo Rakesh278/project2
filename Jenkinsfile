@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Clone') {
       steps {
-        git 'https://github.com/Rakesh278/product-service.git'
+       checkout scm
       }
     }
 
