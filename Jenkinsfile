@@ -38,7 +38,6 @@ pipeline {
           sh '''
           echo "Deploying image: $IMAGE_NAME"
           kubectl set image deployment/product-service product-service=$IMAGE_NAME --record
-          "
           '''
         }
       }

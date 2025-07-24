@@ -13,3 +13,4 @@ spec:
                 name: product-service
                 port:
                   number: 80
+  
