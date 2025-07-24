@@ -35,14 +35,12 @@ pipeline {
 
     stage('Deploy to K8s') {
       steps {
-        sshagent(['ec2-key']) {
           sh '''
-          ssh -o StrictHostKeyChecking=no ec2-user@43.205.113.115 "
-            kubectl set image deployment/product-service product-service=$IMAGE_NAME --record
+          echo "Deploying image: $IMAGE_NAME"
+          kubectl set image deployment/product-service product-service=$IMAGE_NAME --record
           "
           '''
         }
       }
     }
-  }
 }
